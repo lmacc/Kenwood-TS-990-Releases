@@ -116,6 +116,17 @@ for your computer, which ends the reminders, with free updates for life.
 note with your donation. TS-990S Desktop has keys of its own; a TS-890S
 Desktop key does not unlock it.
 
+## Use at your own risk
+
+TS-990S Desktop is provided "as is", without warranty of any kind. It
+controls a radio transmitter, and you use it entirely at your own risk. To
+the fullest extent the law allows, I accept no responsibility or liability
+for any damage, loss or harm arising from its use or from being unable to
+use it. That includes damage to your radio, amplifier, antenna or other
+equipment, loss of data, and interference caused to others. You are
+responsible for your station: for how it is set up, and for operating it
+within your licence and the regulations that apply to you.
+
 ## Problems and suggestions
 
 Please use [Issues](https://github.com/lmacc/Kenwood-TS-990-Releases/issues).
