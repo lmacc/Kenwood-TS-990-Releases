@@ -32,6 +32,50 @@ from home there is the **TS-990S Remote Relay**: a small program on a
 Raspberry Pi or a Windows PC beside the radio that sends both receivers'
 sound to your laptop and your transmit audio back.
 
+## A closer look
+
+![On a wide screen](docs/images/wide-screen.png)
+
+*On a wide screen there is room for more: the clock, RIT/XIT, power and
+delay, DATA VOX and TCI readouts across the top, and the audio scope under
+the bandscope.*
+
+![The sub-screen's displays](docs/images/sub-screen.png)
+
+*The sub-screen in four of its six displays, as the radio's S.DISP key
+picks them: the filter scope with a dial, both bands with the split between
+them, and the X-Y and vector scopes for tuning RTTY and PSK.*
+
+![A press-and-hold screen](docs/images/held-key.png)
+
+*Keys work as they do on the radio: press for one thing, hold for another.
+Holding FIL opens the receive filter screen, with the roofing filter, IF
+shape and AF filter.*
+
+![Logging a QSO](docs/images/log-qso.png)
+
+*Logging a QSO: the frequency and mode come from the radio, the country
+and zones from the call, and QRZ.com fills in the rest. Worked before, by
+band and mode, is on the right.*
+
+![The logbook's map](docs/images/logbook-map.png)
+
+*The logbook's map: countries confirmed, worked and still to work.*
+
+![Propagation](docs/images/propagation.png)
+
+*Propagation: band conditions, the nearest ionosondes and the greyline,
+updated every quarter of an hour.*
+
+![Setting the radio up for FT8](docs/images/ft8-setup.png)
+
+*Setting the radio up for FT8 in one go, and putting it all back after.*
+
+![Memory channels](docs/images/memory-channels.png)
+
+*The radio's memory channels: read, stored, copied and cleared from the
+computer.*
+
 ## Download
 
 From the [latest release](https://github.com/lmacc/Kenwood-TS-990-Releases/releases/latest):
