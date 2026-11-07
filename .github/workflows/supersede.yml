@@ -1,0 +1,51 @@
+name: Supersede older releases
+
+# When a release is published, by hand or by the build, the releases older
+# than it go back to draft, so the newest is the one to download.
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: The release to treat as just published
+        required: true
+      dry_run:
+        description: Only list what would go back to draft
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  supersede:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set older releases to draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          TAG: ${{ github.event.release.tag_name || inputs.tag }}
+          PRERELEASE: ${{ github.event.release.prerelease || false }}
+          DRY_RUN: ${{ inputs.dry_run || false }}
+        run: |
+          if [ "$PRERELEASE" = "true" ]; then
+            echo "$TAG is a pre-release: nothing changed."
+            exit 0
+          fi
+          gh release list --repo "$REPO" --limit 200 \
+             --json tagName,isDraft --jq '.[] | select(.isDraft | not) | .tagName' |
+          while read -r t; do
+            [ "$t" = "$TAG" ] && continue
+            newest=$(printf '%s\n%s\n' "${t#v}" "${TAG#v}" | sort -V | tail -n 1)
+            if [ "$newest" != "${TAG#v}" ]; then
+              echo "Left alone: $t is newer than $TAG"
+            elif [ "$DRY_RUN" = "true" ]; then
+              echo "Would go back to draft: $t (superseded by $TAG)"
+            else
+              echo "Back to draft: $t (superseded by $TAG)"
+              gh release edit "$t" --repo "$REPO" --draft=true
+            fi
+          done
