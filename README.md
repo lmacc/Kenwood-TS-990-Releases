@@ -76,6 +76,19 @@ updated every quarter of an hour.*
 *The radio's memory channels: read, stored, copied and cleared from the
 computer.*
 
+![The VST HOST](docs/images/vst-host.png)
+
+*The VST HOST: your audio interface's inputs through your VST 3 plugins and
+out of its outputs, in a row or side by side, with every delay lined up.
+While it is on, MIC sends what comes out of it. ASIO drivers work here, and
+can also be chosen for Listen and Mic in.*
+
+![The Audio Analyser](docs/images/audio-analyser.png)
+
+*The Audio Analyser: what you receive, or your own transmit audio, in a
+window of its own, with four holds to compare before and after, THD and
+signal-to-noise, and levels and loudness.*
+
 ## Download
 
 From the [latest release](https://github.com/lmacc/Kenwood-TS-990-Releases/releases/latest):
