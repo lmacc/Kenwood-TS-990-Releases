@@ -32,7 +32,7 @@ from home there is the **TS-990S Remote Relay**: a small program on a
 Raspberry Pi or a Windows PC beside the radio that sends both receivers'
 sound to your laptop and your transmit audio back.
 
-## Coming in the next release
+## New in 1.0.4
 
 ### The EQ RACK
 
